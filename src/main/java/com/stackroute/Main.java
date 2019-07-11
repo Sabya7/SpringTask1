@@ -16,14 +16,17 @@ import org.springframework.core.io.Resource;
 public class Main {
     public static void main(String[] args) {
         ApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");
-       Movie mv= context.getBean("movie",Movie.class);
+       Movie mv= context.getBean("movieA",Movie.class);
+       Movie mv2= context.getBean("movie",Movie.class);
+        System.out.println(mv==mv2);
        System.out.println(mv);
+        System.out.println(mv2);
 
         @Deprecated
         BeanFactory beanFactory=new XmlBeanFactory(new ClassPathResource("beans.xml"));
         @Deprecated
         Movie moviev= (Movie) beanFactory.getBean("movie");
-         System.out.println(moviev);
+        // System.out.println(moviev);
 
         /*BeanDefinitionRegistry beanDefinitionRegistry=new XmlBeanFactory(new ClassPathResource("beans.xml"));
         BeanFactory beanFactory1=new XmlBeanFactory(new ClassPathResource("beans.xml"));
@@ -35,6 +38,6 @@ public class Main {
         XmlBeanDefinitionReader rdr = new XmlBeanDefinitionReader(factory);
        // rdr.loadBeanDefinitions(new ClassPathResource("beans.xml"));
         Movie mv1 =((XmlBeanFactory)factory).getBean("movie",Movie.class);
-        System.out.println(mv1);
+        //System.out.println(mv1);
     }
 }
