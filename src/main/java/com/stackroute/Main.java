@@ -19,7 +19,7 @@ public class Main {
        Movie mv= context.getBean("movieA",Movie.class);
        Movie mv2= context.getBean("movie",Movie.class);
         System.out.println(mv==mv2);
-       System.out.println(mv);
+        System.out.println(mv);
         System.out.println(mv2);
 
         @Deprecated

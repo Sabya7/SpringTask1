@@ -11,7 +11,7 @@
          <property name="gender" value="male"></property>
         <property name="age" value="21"></property>
     </bean>
-    <bean id="actorRohit" class="com.stackroute.domain.Actor">
+    <bean id="actor" class="com.stackroute.domain.Actor">
         <constructor-arg name="name" value="Rohit Chakravorty"></constructor-arg>
         <constructor-arg name="gender" value="male"></constructor-arg>
         <constructor-arg name="age" value="22"></constructor-arg>
@@ -26,10 +26,9 @@
         <constructor-arg name="gender" value="male"></constructor-arg>
         <constructor-arg name="age" value="22"></constructor-arg>
     </bean>
-    <bean id="movie" scope="prototype" class="com.stackroute.domain.Movie">
-        <property name="actor" ref="actorSandy"></property>
+    <bean id="movie" scope="prototype" class="com.stackroute.domain.Movie" autowire="byName">
     </bean>
-    <bean name="movieA,movieB" class="com.stackroute.domain.Movie">
-        <constructor-arg name="actor" ref="actorAbinash"></constructor-arg>
+    <bean name="movieA,movieB" class="com.stackroute.domain.Movie" autowire="constructor">
+
     </bean>
 </beans>
