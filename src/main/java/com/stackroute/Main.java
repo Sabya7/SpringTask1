@@ -9,6 +9,7 @@ import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -39,5 +40,6 @@ public class Main {
        // rdr.loadBeanDefinitions(new ClassPathResource("beans.xml"));
         Movie mv1 =((XmlBeanFactory)factory).getBean("movie",Movie.class);
         //System.out.println(mv1);
+
     }
 }

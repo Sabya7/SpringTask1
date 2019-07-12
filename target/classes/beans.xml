@@ -29,6 +29,6 @@
     <bean id="movie" scope="prototype" class="com.stackroute.domain.Movie" autowire="byName">
     </bean>
     <bean name="movieA,movieB" class="com.stackroute.domain.Movie" autowire="constructor">
-        
+
     </bean>
 </beans>
