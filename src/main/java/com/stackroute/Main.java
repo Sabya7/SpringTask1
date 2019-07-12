@@ -19,9 +19,11 @@ public class Main {
         ApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");
        Movie mv= context.getBean("movieA",Movie.class);
        Movie mv2= context.getBean("movie",Movie.class);
+       BeanLifecycleDemoBean beanLifecycleDemoBean=context.getBean("life",BeanLifecycleDemoBean.class);
         System.out.println(mv==mv2);
         System.out.println(mv);
         System.out.println(mv2);
+        System.out.println(beanLifecycleDemoBean);
 
         @Deprecated
         BeanFactory beanFactory=new XmlBeanFactory(new ClassPathResource("beans.xml"));
