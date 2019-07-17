@@ -32,7 +32,7 @@ public class Main {
       */
         @Deprecated
         BeanDefinitionRegistry factory = new XmlBeanFactory(new ClassPathResource("beans.xml"));
-        XmlBeanDefinitionReader rdr = new XmlBeanDefinitionReader(factory);
+        XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(factory);
        // rdr.loadBeanDefinitions(new ClassPathResource("beans.xml"));
         Movie mv1 =((XmlBeanFactory)factory).getBean("movie",Movie.class);
         System.out.println(mv1);
