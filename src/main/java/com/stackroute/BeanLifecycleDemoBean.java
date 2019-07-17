@@ -4,7 +4,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 
 
-public class BeanLifecycleDemoBean implements InitializingBean {
+public class BeanLifecycleDemoBean implements InitializingBean,DisposableBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
@@ -17,5 +17,10 @@ public class BeanLifecycleDemoBean implements InitializingBean {
     public void customDestroy()
     {
         System.out.println("Destroyed bean");
+    }
+    @Override
+    public void destroy() throws Exception
+    {
+        System.out.println("Bean Destroyed")
     }
 }
